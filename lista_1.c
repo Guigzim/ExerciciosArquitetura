@@ -3,7 +3,6 @@
 #include <string.h>
 #include <locale.h>
 
-
 int unidadeToNum(char unidade); //Converte unidade de letra para expoente Ex: G para 30
 char numToUnidade(int num); //Converte unidade de expoente para letra Ex 30 para G
 void exercicio1(); //Executa funções do exercício 01
@@ -98,10 +97,10 @@ void exercicio01()
     memória com unidade e o tamanho da célula em bits e retorna
     a capacidade total da memória
     */
+    printf("\n---------- Exercício 01 ----------\n");
     double qntdEnderecos, tamanhoEndereco;
     char unidadeEnderecos;
     int unidade=0;
-    printf("\n---------- Exercício 01 ----------\n");
 
     printf("Digite a quantidade de endereços da memória (sem a unidade): \n");
     scanf("%lf", &qntdEnderecos);
