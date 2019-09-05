@@ -3,6 +3,20 @@
 #include <string.h>
 #include <locale.h>
 
+
+int unidadeToNum(char unidade); //Converte unidade de letra para expoente Ex: G para 30
+char numToUnidade(int num); //Converte unidade de expoente para letra Ex 30 para G
+void exercicio1(); //Executa funções do exercício 01
+
+int main()
+{
+    exercicio01();
+
+    return 0;
+
+}
+
+
 int unidadeToNum(char unidade)
 {
     switch (unidade)
@@ -80,17 +94,25 @@ char numToUnidade(int num)
 
 void exercicio01()
 {
+    /*Exercício 01 - solicita a quantidade de celulas da
+    memória com unidade e o tamanho da célula em bits e retorna
+    a capacidade total da memória
+    */
     double qntdEnderecos, tamanhoEndereco;
     char unidadeEnderecos;
     int unidade=0;
     printf("\n---------- Exercício 01 ----------\n");
+
     printf("Digite a quantidade de endereços da memória (sem a unidade): \n");
     scanf("%lf", &qntdEnderecos);
+
     printf("Digite a unidade da quantidade de endereços da memória: ");
     printf("\nAspas vazias ('') para sem unidade\nK para Kilo\nM para Mega\nG para Giga\nT para Tera\n");
     scanf("%s", &unidadeEnderecos);
+
     printf("Digite o tamanho de cada endereco em bits: \n");
     scanf("%lf", &tamanhoEndereco);
+    
     double totalQntdEnd = qntdEnderecos * pow(2, unidadeToNum(unidadeEnderecos));
     double tamanhoBytes = tamanhoEndereco / 8;
     double capacidadeBytes = totalQntdEnd * tamanhoBytes;
@@ -106,13 +128,4 @@ void exercicio01()
     else{
         printf("A capacidade em bytes é: %.2lfBytes", capacidadeBytes);
     }
-    
-}
-int main()
-{
-    setlocale(LC_ALL, "");
-    exercicio01();
-
-    return 0;
-
 }
