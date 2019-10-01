@@ -62,7 +62,7 @@ def set_limite_pecas():
 
 def usuario_escolhe_jogada(n,m):
     qnt_usuario_remove=int(input("Quantas pecas deseja tirar ?"))
-
+    '''
     if n<n-qnt_usuario_remove:
         print("Voce nao pode tirar mais pecas do que ha na mesa")
         qnt_usuario_remove = usuario_escolhe_jogada(n,m)
@@ -70,7 +70,11 @@ def usuario_escolhe_jogada(n,m):
     if qnt_usuario_remove>m:
         print("Valor invalido ! Voce pode tirar no maximo {} pecas".format(m))
         qnt_usuario_remove = usuario_escolhe_jogada(n,m)
-
+    '''
+    if qnt_usuario_remove > m or qnt_usuario_remove > n:
+        print("Valor invalido ! Voce pode tirar no maximo {} pecas".format(m))
+        qnt_usuario_remove = usuario_escolhe_jogada(n,m)
+        
     print("O usuario removeu {} pedras da mesa".format(qnt_usuario_remove))
     return qnt_usuario_remove
 
